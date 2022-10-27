@@ -6,4 +6,5 @@
 *.jpg binary
 *.cer binary
 *.pem binary
+*.js text eol=lf
 package-lock.json binary
