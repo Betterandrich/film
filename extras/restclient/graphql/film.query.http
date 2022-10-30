@@ -1,0 +1,93 @@
+### Suche id, titel, angebotsoption und version von allen Filmen
+POST {{graphQlUrl}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+{
+  filme {
+    id
+    titel
+    angebotsoption
+    version
+  }
+}
+
+### Suche titel, angebotsoption, isan und version von einem Film mit vorhandener Film-ID
+POST {{graphQlUrl}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query ($id: ID! = "00000000-0000-0000-0000-000000000001") {
+  film(id: $id) {
+    titel
+    angebotsoption
+    isan
+    version
+  }
+}
+
+{
+  "id": "00000000-0000-0000-0000-000000000001"
+}
+
+### Suche titel von einem Film mit nicht-vorhandener Film-ID
+POST {{graphQlUrl}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query ($id: ID! = "99999999-9999-9999-9999-999999999999") {
+  film(id: $id) {
+    titel
+  }
+}
+
+{
+  "id": "99999999-9999-9999-9999-999999999999"
+}
+
+### Suche angebotsoption von Filmen mit vorhandenem Titel
+POST {{graphQlUrl}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query ($titel: String = "Alpha") {
+  filme(titel: $titel) {
+    angebotsoption
+  }
+}
+
+{
+  "titel": "Alpha"
+}
+
+### Suche titel, angebotsoption und genres von Filmen mit vorhandenem Titel
+POST {{graphQlUrl}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query ($titel: String = "a") {
+  filme(titel: $titel) {
+    titel
+    angebotsoption
+    genres
+  }
+}
+
+{
+  "titel": "a"
+}
+
+### Suche angebotsoption von Filmen mit NICHT-vorhandenem Titel
+POST {{graphQlUrl}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query ($titel: String = "Nichtvorhanden") {
+  filme(titel: $titel) {
+    angebotsoption
+  }
+}
+
+{
+  "titel": "Nichtvorhanden"
+}
