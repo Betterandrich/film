@@ -6,10 +6,9 @@ import { UseInterceptors } from '@nestjs/common';
 import { UserInputError } from 'apollo-server-express';
 import { getLogger } from '../../logger/logger.js';
 
-export type FilmDTO = Omit<
-    Film,
-    'aktualisiert' | 'erzeugt' | 'genres'
-> & { genres: string[] };
+export type FilmDTO = Omit<Film, 'aktualisiert' | 'erzeugt' | 'genres'> & {
+    genres: string[];
+};
 export interface IdInput {
     id: string;
 }
@@ -60,7 +59,7 @@ export class FilmQueryResolver {
 
     #toFilmDTO(film: Film) {
         const genres = film.genres.map(
-            (genre) => genre.genre!,
+            (genre) => genre.genre!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
         );
         const filmDTO: FilmDTO = {
             id: film.id,
