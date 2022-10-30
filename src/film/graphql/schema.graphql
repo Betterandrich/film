@@ -1,0 +1,81 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+"Funktionen, um Filmdaten zu lesen"
+type Query {
+  filme(titel: String): [Film!]
+
+  film(id: ID!): Film
+}
+
+"Funktionen, um Filme neu anzulegen, zu aktualisieren oder zu löschen"
+type Mutation {
+  create(input: FilmInput!): String
+
+  update(input: FilmUpdateInput!): Int
+
+  delete(id: ID!): Boolean
+}
+
+"Datenschema zu einem Film, der gelesen wird"
+type Film {
+  id: ID
+  version: Int
+  titel: String
+  rating: Int
+  angebotsoption: Angebotsoption
+  produzent: Produzent
+  preis: Float
+  rabatt: Float
+  hochaufloesend: Boolean
+  datum: String
+  isan: String
+  homepage: String
+  genres: [String]
+}
+
+"Enum-Typ für die Angebotsoption eines Filmes"
+enum Angebotsoption {
+  KAUFEN
+  LEIHEN
+}
+
+"Enum-Typ für den Produzent eines Filmes"
+enum Produzent {
+  FOO_PRODUZENT
+  BAR_PRODUZENT
+}
+
+"Daten für ein neuen Film"
+input FilmInput {
+  titel: String!
+  rating: Int
+  angebotsoption: Angebotsoption
+  produzent: Produzent!
+  preis: Float
+  rabatt: Float
+  hochaufloesend: Boolean
+  datum: String
+  isan: String
+  homepage: String
+  genres: [String]
+}
+
+"Daten für ein zu ändernden Film"
+input FilmUpdateInput {
+  id: ID
+  version: Int
+  titel: String!
+  rating: Int
+  angebotsoption: Angebotsoption
+  produzent: Produzent!
+  preis: Float
+  rabatt: Float
+  hochaufloesend: Boolean
+  datum: String
+  isan: String
+  homepage: String
+  genres: [String]
+}
