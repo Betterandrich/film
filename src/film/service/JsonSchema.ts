@@ -62,11 +62,14 @@ export const jsonSchema: GenericJsonSchema = {
             version: 'Die Versionsnummer muss mindestens 0 sein.',
             titel: 'Ein Filmtitel muss mit einem Filmstaben, einer Ziffer oder _ beginnen.',
             rating: 'Eine Bewertung muss zwischen 0 und 5 liegen.',
-            angebotsoption: 'Die Angebotsoption eines Filmes muss LEIHEN oder KAUFEN sein.',
-            produzent: 'Der Produzent eines Filmes muss FOO_PRODUZENT oder BAR_PRODUZENT sein.',
+            angebotsoption:
+                'Die Angebotsoption eines Filmes muss LEIHEN oder KAUFEN sein.',
+            produzent:
+                'Der Produzent eines Filmes muss FOO_PRODUZENT oder BAR_PRODUZENT sein.',
             preis: 'Der Preis darf nicht negativ sein.',
             rabatt: 'Der Rabatt muss ein Wert zwischen 0 und 1 sein.',
-            hochaufloesend: '"hochaufloesend" muss auf true oder false gesetzt sein.',
+            hochaufloesend:
+                '"hochaufloesend" muss auf true oder false gesetzt sein.',
             datum: 'Das Datum muss im Format yyyy-MM-dd sein.',
             isan: 'Die ISAN-Nummer ist nicht korrekt.',
             homepage: 'Die Homepage ist nicht korrekt.',

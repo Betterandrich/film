@@ -8,7 +8,7 @@
  * Klasse für fehlerhafte Filmdaten. Die Meldungstexte sind in der Property
  * `msg` gekapselt.
  */
- export interface ConstraintViolations {
+export interface ConstraintViolations {
     readonly type: 'ConstraintViolations';
     readonly messages: string[];
 }
@@ -73,8 +73,8 @@ export interface FilmNotExists {
  * - {@linkcode VersionOutdated}
  */
 export type UpdateError =
-    | FilmNotExists
     | ConstraintViolations
+    | FilmNotExists
     | TitelExists
     | VersionInvalid
     | VersionOutdated;
@@ -110,7 +110,7 @@ export interface InvalidContentType {
  * - {@linkcode MultipleFiles}
  */
 export type FileFindError =
-    | FilmNotExists
     | FileNotFound
+    | FilmNotExists
     | InvalidContentType
     | MultipleFiles;

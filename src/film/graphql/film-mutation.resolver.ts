@@ -14,7 +14,7 @@ import { getLogger } from '../../logger/logger.js';
 
 type FilmCreateDTO = Omit<
     Film,
-    'aktualisiert' | 'erzeugt' | 'id' | 'genres' | 'version'
+    'aktualisiert' | 'erzeugt' | 'genres' | 'id' | 'version'
 > & { genres: string[] };
 type FilmUpdateDTO = Omit<Film, 'aktualisiert' | 'erzeugt' | 'genres'>;
 
@@ -108,31 +108,41 @@ export class FilmMutationResolver {
 
     #errorMsgCreateFilm(err: CreateError) {
         switch (err.type) {
-            case 'ConstraintViolations':
+            case 'ConstraintViolations': {
                 return err.messages.join(' ');
-            case 'TitelExists':
+            }
+            case 'TitelExists': {
                 return `Der Titel "${err.titel}" existiert bereits`;
-            case 'IsbnExists':
+            }
+            case 'IsbnExists': {
                 return `Die ISAN ${err.isan} existiert bereits`;
-            default:
+            }
+            default: {
                 return 'Unbekannter Fehler';
+            }
         }
     }
 
     #errorMsgUpdateFilm(err: UpdateError) {
         switch (err.type) {
-            case 'ConstraintViolations':
+            case 'ConstraintViolations': {
                 return err.messages.join(' ');
-            case 'TitelExists':
+            }
+            case 'TitelExists': {
                 return `Der Titel "${err.titel}" existiert bereits`;
-            case 'FilmNotExists':
+            }
+            case 'FilmNotExists': {
                 return `Es gibt kein Film mit der ID ${err.id}`;
-            case 'VersionInvalid':
+            }
+            case 'VersionInvalid': {
                 return `"${err.version}" ist keine gueltige Versionsnummer`;
-            case 'VersionOutdated':
+            }
+            case 'VersionOutdated': {
                 return `Die Versionsnummer "${err.version}" ist nicht mehr aktuell`;
-            default:
+            }
+            default: {
                 return 'Unbekannter Fehler';
+            }
         }
     }
 }
