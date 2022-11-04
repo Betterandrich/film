@@ -1,5 +1,3 @@
-// eslint-disable-next-line eslint-comments/disable-enable-pair
-/* eslint-disable no-useless-escape */
 /**
  * Das Modul enthält die Funktion, um die Test-DB neu zu laden.
  * @packageDocumentation
@@ -17,12 +15,20 @@ import process from 'node:process';
 @Injectable()
 export class InfoService implements OnApplicationBootstrap {
     readonly #banner = `
-        .   ______                               _____
-        .  / ____/______  ______  ____  ___     |__  /
-        . / / __/ ___/ / / / __ \/ __ \/ _ \     /_ < 
-        ./ /_/ / /  / /_/ / /_/ / /_/ /  __/   ___/ / 
-        .\____/_/   \__,_/ .___/ .___/\___/   /____/  
-        .               /_/   /_/                     
+        .     _______  ___   ___      __   __                                       
+        .    |       ||   | |   |    |  |_|  |                                      
+        .    |    ___||   | |   |    |       |                                      
+        .    |   |___ |   | |   |    |       |                                      
+        .    |    ___||   | |   |___ |       |                                      
+        .    |   |    |   | |       || ||_|| |                                      
+        .    |___|    |___| |_______||_|   |_|                                      
+        .     _______  ______    __   __  _______  _______  _______         _______ 
+        .    |       ||    _ |  |  | |  ||       ||       ||       |       |       |
+        .    |    ___||   | ||  |  | |  ||    _  ||    _  ||    ___| ____  |___    |
+        .    |   | __ |   |_||_ |  |_|  ||   |_| ||   |_| ||   |___ |____|  ___|   |
+        .    |   ||  ||    __  ||       ||    ___||    ___||    ___|       |___    |
+        .    |   |_| ||   |  | ||       ||   |    |   |    |   |___         ___|   |
+        .    |_______||___|  |_||_______||___|    |___|    |_______|       |_______|                                                                 
     `;
 
     readonly #logger = getLogger(InfoService.name);
