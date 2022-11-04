@@ -52,6 +52,7 @@ export class FilmWriteService {
         this.#repo = repo;
         this.#readService = readService;
         this.#validationService = validationService;
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         this.#mailService = mailService;
     }
 

@@ -23,11 +23,11 @@
 import { Injectable, type OnApplicationBootstrap } from '@nestjs/common';
 import { dbPopulate, typeOrmModuleOptions } from '../db.js';
 import { Film } from '../../film/entity/film.entity.js';
+import { Genre } from '../../film/entity/genre.entity.js';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Genre } from '../../film/entity/genre.entity.js';
-import { filme } from './testdaten.js';
 import { configDir } from '../node.js';
+import { filme } from './testdaten.js';
 import { getLogger } from '../../logger/logger.js';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
