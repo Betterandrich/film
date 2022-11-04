@@ -3,12 +3,12 @@ import { type CreateError, type UpdateError } from '../service/errors.js';
 import { UseGuards, UseInterceptors } from '@nestjs/common';
 import { type Film } from '../entity/film.entity.js';
 import { FilmWriteService } from '../service/film-write.service.js';
+import { type Genre } from '../entity/genre.entity.js';
 import { type IdInput } from './film-query.resolver.js';
 import { JwtAuthGraphQlGuard } from '../../security/auth/jwt/jwt-auth-graphql.guard.js';
 import { ResponseTimeInterceptor } from '../../logger/response-time.interceptor.js';
 import { Roles } from '../../security/auth/roles/roles.decorator.js';
 import { RolesGraphQlGuard } from '../../security/auth/roles/roles-graphql.guard.js';
-import { type Genre } from '../entity/genre.entity.js';
 import { UserInputError } from 'apollo-server-express';
 import { getLogger } from '../../logger/logger.js';
 
