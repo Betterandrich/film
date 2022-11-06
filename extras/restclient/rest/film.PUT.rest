@@ -16,7 +16,7 @@ Content-Type: application/x-www-form-urlencoded
 
 username=admin&password=FALSCH
 
-### Vorhandenes Film aktualisieren
+### Vorhandenen Film aktualisieren
 PUT {{restUrl}}/00000000-0000-0000-0000-000000000040
 Content-Type: application/json
 Authorization: Bearer {{login.response.body.$.token}}
@@ -24,7 +24,7 @@ If-Match: "0"
 
 < .\json\film-40-put.json
 
-### NICHT-Vorhandenes Film aktualisieren
+### NICHT-Vorhandenen Film aktualisieren
 PUT {{restUrl}}/99999999-9999-9999-9999-999999999999
 Content-Type: application/json
 Authorization: Bearer {{login.response.body.$.token}}
@@ -32,14 +32,14 @@ If-Match: "0"
 
 < .\json\film-40-put.json
 
-### Vorhandenes Film *OHNE* Versionsnummer aktualisieren
+### Vorhandenen Film *OHNE* Versionsnummer aktualisieren
 PUT {{restUrl}}/00000000-0000-0000-0000-000000000040
 Content-Type: application/json
 Authorization: Bearer {{login.response.body.$.token}}
 
 < .\json\film-40-put.json
 
-### Vorhandenes Film mit falscher Versionsnummer aktualisieren
+### Vorhandenen Film mit falscher Versionsnummer aktualisieren
 PUT {{restUrl}}/00000000-0000-0000-0000-000000000040
 Content-Type: application/json
 If-Match: 0
@@ -47,7 +47,7 @@ Authorization: Bearer {{login.response.body.$.token}}
 
 < .\json\film-40-put.json
 
-### Vorhandenes Film mit alter Versionsnummer aktualisieren
+### Vorhandenen Film mit alter Versionsnummer aktualisieren
 PUT {{restUrl}}/00000000-0000-0000-0000-000000000040
 Content-Type: application/json
 If-Match: "-1"
@@ -55,7 +55,7 @@ Authorization: Bearer {{login.response.body.$.token}}
 
 < .\json\film-40-put.json
 
-### Vorhandenes Film mit ungueltigen Daten aktualisieren
+### Vorhandenen Film mit ungueltigen Daten aktualisieren
 PUT {{restUrl}}/00000000-0000-0000-0000-000000000040
 Content-Type: application/json
 Authorization: Bearer {{login.response.body.$.token}}
