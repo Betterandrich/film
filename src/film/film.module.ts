@@ -8,7 +8,6 @@ import { FilmValidationService } from './service/film-validation.service.js';
 import { FilmWriteController } from './rest/film-write.controller.js';
 import { FilmWriteService } from './service/film-write.service.js';
 import { Genre } from './entity/genre.entity.js';
-import { MailModule } from '../mail/mail.module.js';
 import { Module } from '@nestjs/common';
 import { QueryBuilder } from './service/query-builder.js';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -25,7 +24,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
  */
 @Module({
     imports: [
-        MailModule,
         // siehe auch src\app.module.ts
         TypeOrmModule.forFeature([Film, Genre]),
         AuthModule,

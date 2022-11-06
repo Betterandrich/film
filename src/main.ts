@@ -1,22 +1,3 @@
-/*
- * Copyright (C) 2021 - present Juergen Zimmermann, Hochschule Karlsruhe
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
- */
-
-// https://devblogs.microsoft.com/typescript/a-proposal-for-type-syntax-in-javascript
-
 // Modul (in JS) = Datei
 // Pfad innerhalb von Packages in node_modules ("nicht-relative Imports")
 import {
@@ -34,10 +15,8 @@ import { helmetHandlers } from './security/http/helmet.handler.js';
 import { nodeConfig } from './config/node.js';
 import { paths } from './config/paths.js';
 
-// Destructuring ab ES 2015
 const { httpsOptions, port } = nodeConfig;
 
-// "Arrow Function" ab ES 2015
 const setupSwagger = (app: INestApplication) => {
     const config = new DocumentBuilder()
         .setTitle('Film')
@@ -66,15 +45,12 @@ interface Route {
     method: string;
 }
 
-// Promise ab ES 2015, vgl: Future in Java
-// async/await ab ES 2017, vgl: C#
 const bootstrap = async () => {
     const app =
         httpsOptions === undefined
             ? await NestFactory.create(AppModule)
-            : await NestFactory.create(AppModule, { httpsOptions }); // "Shorthand Properties" ab ES 2015
+            : await NestFactory.create(AppModule, { httpsOptions });
 
-    // https://docs.nestjs.com/security/helmet
     app.use(helmetHandlers);
 
     setupSwagger(app);
@@ -86,7 +62,6 @@ const bootstrap = async () => {
 
     await app.listen(port);
 
-    // https://stackoverflow.com/questions/58255000/how-can-i-get-all-the-routes-from-all-the-modules-and-controllers-available-on#answer-63333671
     /* eslint-disable @typescript-eslint/no-unsafe-assignment, no-underscore-dangle */
     const availableRoutes: Route[] = app
         .getHttpServer()

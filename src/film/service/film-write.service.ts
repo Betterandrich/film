@@ -19,7 +19,6 @@ import { FilmValidationService } from './film-validation.service.js';
 import { Genre } from '../entity/genre.entity.js';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Injectable } from '@nestjs/common';
-import { MailService } from '../../mail/mail.service.js';
 import RE2 from 're2';
 import { getLogger } from '../../logger/logger.js';
 import { v4 as uuid } from 'uuid';
@@ -38,8 +37,6 @@ export class FilmWriteService {
 
     readonly #validationService: FilmValidationService;
 
-    readonly #mailService: MailService;
-
     readonly #logger = getLogger(FilmWriteService.name);
 
     // eslint-disable-next-line max-params
@@ -47,12 +44,10 @@ export class FilmWriteService {
         @InjectRepository(Film) repo: Repository<Film>,
         readService: FilmReadService,
         validationService: FilmValidationService,
-        mailService: MailService,
     ) {
         this.#repo = repo;
         this.#readService = readService;
         this.#validationService = validationService;
-        this.#mailService = mailService;
     }
 
     /**
@@ -74,8 +69,6 @@ export class FilmWriteService {
 
         const filmDb = await this.#repo.save(removeIsbnDash(film)); // implizite Transaktion
         this.#logger.debug('create: filmDb=%o', filmDb);
-
-        await this.#sendmail(filmDb);
 
         return filmDb.id!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
     }
@@ -181,12 +174,6 @@ export class FilmWriteService {
 
         this.#logger.debug('#validateCreate: ok');
         return undefined;
-    }
-
-    async #sendmail(film: Film) {
-        const subject = `Neues Film ${film.id}`;
-        const body = `Das Film mit dem Titel <strong>${film.titel}</strong> ist angelegt`;
-        await this.#mailService.sendmail(subject, body);
     }
 
     async #validateUpdate(
