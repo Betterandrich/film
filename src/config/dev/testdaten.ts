@@ -1,20 +1,4 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-/*
- * Copyright (C) 2020 - present Juergen Zimmermann, Hochschule Karlsruhe
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
- */
 import { type Film } from '../../film/entity/film.entity.js';
 import { type Genre } from './../../film/entity/genre.entity.js';
 
@@ -35,8 +19,8 @@ export const filme: Film[] = [
         rabatt: 0.011,
         hochaufloesend: true,
         datum: new Date('2022-02-01'),
-        // "Konzeption und Realisierung eines aktiven Datenbanksystems"
-        isan: '9783897225831',
+        // "Happy New Year (New Year's Eve)"
+        isan: '00000002FF1E0000200000000V',
         homepage: 'https://acme.at/',
         genres: [],
         erzeugt: new Date('2022-02-01'),
@@ -53,8 +37,8 @@ export const filme: Film[] = [
         rabatt: 0.022,
         hochaufloesend: true,
         datum: new Date('2022-02-02'),
-        // "Verteilte Komponenten und Datenbankanbindung"
-        isan: '9783827315526',
+        // "Pokemon 3 : The Movie"
+        isan: '00000002D32B0000F00000000T',
         homepage: 'https://acme.biz/',
         genres: [],
         erzeugt: new Date('2022-02-02'),
@@ -71,8 +55,8 @@ export const filme: Film[] = [
         rabatt: 0.033,
         hochaufloesend: true,
         datum: new Date('2022-02-03'),
-        // "Design Patterns"
-        isan: '9780201633610',
+        // "While we're young"
+        isan: '00000003F9770000O000000002',
         homepage: 'https://acme.com/',
         genres: [],
         erzeugt: new Date('2022-02-03'),
@@ -92,8 +76,8 @@ export const filme: Film[] = [
         rabatt: 0.044,
         hochaufloesend: true,
         datum: new Date('2022-02-04'),
-        // "Freiburger Chorfilm"
-        isan: '0007097328',
+        // "Moonlight"
+        isan: '0000000452350000W00000000F',
         homepage: 'https://acme.de/',
         genres: [],
         erzeugt: new Date('2022-02-04'),
@@ -113,8 +97,8 @@ export const filme: Film[] = [
         rabatt: 0.055,
         hochaufloesend: true,
         datum: new Date('2022-02-05'),
-        // "Maschinelle Lernverfahren zur Behandlung von Bonitätsrisiken im Mobilfunkgeschäft"
-        isan: '9783824404810',
+        // "Titanic"
+        isan: '000000003EB50000Q00000000X',
         homepage: 'https://acme.es/',
         genres: [],
         erzeugt: new Date('2022-02-05'),
@@ -131,8 +115,8 @@ export const filme: Film[] = [
         rabatt: 0.066,
         hochaufloesend: true,
         datum: new Date('2022-02-06'),
-        // "Software pioneers",
-        isan: '9783540430810',
+        // "Zufällige kurze ISAN - wurde früher genutzt",
+        isan: '0000000016FF0000Y',
         homepage: 'https://acme.it/',
         genres: [],
         erzeugt: new Date('2022-02-06'),

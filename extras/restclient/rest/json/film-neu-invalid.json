@@ -8,5 +8,6 @@
   "hochaufloesend": true,
   "datum": "12345-123-123",
   "isan": "falsche-isan",
-  "homepage": "anyHomepage"
+  "homepage": "anyHomepage",
+  "genres": []
 }

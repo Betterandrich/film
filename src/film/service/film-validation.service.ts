@@ -38,53 +38,13 @@ export class FilmValidationService {
         return ID_PATTERN.test(id);
     }
 
-    #checkChars(chars: string[]) {
-        /* eslint-disable @typescript-eslint/no-magic-numbers, unicorn/no-for-loop, security/detect-object-injection */
-        let sum = 0;
-        let check: number | string;
-
-        if (chars.length === 9) {
-            chars.reverse();
-            for (let i = 0; i < chars.length; i++) {
-                sum += (i + 2) * Number.parseInt(chars[i] ?? '', 10);
-            }
-            check = 11 - (sum % 11); // eslint-disable-line @typescript-eslint/no-extra-parens
-            if (check === 10) {
-                check = 'X';
-            } else if (check === 11) {
-                check = '0';
-            }
-        } else {
-            for (let i = 0; i < chars.length; i++) {
-                sum += ((i % 2) * 2 + 1) * Number.parseInt(chars[i] ?? '', 10); // eslint-disable-line @typescript-eslint/no-extra-parens
-            }
-            check = 10 - (sum % 10); // eslint-disable-line @typescript-eslint/no-extra-parens
-            if (check === 10) {
-                check = '0';
-            }
-        }
-        return check;
-        /* eslint-enable @typescript-eslint/no-magic-numbers, unicorn/no-for-loop, security/detect-object-injection */
-    }
-
     #validateISBN: FormatValidator<string> = (subject: string) => {
-        /* eslint-disable max-len, unicorn/no-unsafe-regex, security/detect-unsafe-regex, regexp/no-super-linear-backtracking */
         const regex =
-            /^(?:ISAN(?:-1[03])?:? )?(?=[\dX]{10}$|(?=(?:\d+[- ]){3})[- \dX]{13}$|97[89]\d{10}$|(?=(?:\d+[- ]){4})[- \d]{17}$)(?:97[89][- ]?)?\d{1,5}[- ]?\d+[- ]?\d+[- ]?[\dX]$/u; //NOSONAR
-        /* eslint-enable max-len, unicorn/no-unsafe-regex, security/detect-unsafe-regex, regexp/no-super-linear-backtracking */
+            // eslint-disable-next-line max-len, security/detect-unsafe-regex, unicorn/no-unsafe-regex, require-unicode-regexp
+            /^(?:isan )?(?:[\da-f]{4}-){4}[\da-z](?:-(?:[\da-f]{4}-){2}[\da-z])?$/i; //NOSONAR
 
         if (regex.test(subject)) {
-            const chars = subject
-                .replace(/[ -]|^ISAN(?:-1[03])?:?/gu, '')
-                .split(''); // eslint-disable-line unicorn/prefer-spread
-            const last = chars.pop();
-
-            const check = this.#checkChars(chars);
-
-            // eslint-disable-next-line eqeqeq
-            if (check == last) {
-                return true;
-            }
+            return true;
         }
 
         return false;
