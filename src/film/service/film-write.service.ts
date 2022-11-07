@@ -39,7 +39,6 @@ export class FilmWriteService {
 
     readonly #logger = getLogger(FilmWriteService.name);
 
-    // eslint-disable-next-line max-params
     constructor(
         @InjectRepository(Film) repo: Repository<Film>,
         readService: FilmReadService,
