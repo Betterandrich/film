@@ -195,6 +195,4 @@ describe('POST /', () => {
         expect(status).toBe(HttpStatus.FORBIDDEN);
         expect(data.statusCode).toBe(HttpStatus.FORBIDDEN);
     });
-
-    test.todo('Abgelaufener Token');
 });
