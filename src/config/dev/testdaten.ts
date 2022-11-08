@@ -128,32 +128,32 @@ export const genres: Genre[] = [
     {
         id: '00000000-0000-0000-0000-010000000001',
         film: filme[0],
-        genre: 'JAVASCRIPT',
+        genre: 'HORROR',
     },
     {
         id: '00000000-0000-0000-0000-020000000001',
         film: filme[1],
-        genre: 'TYPESCRIPT',
+        genre: 'FANTASY',
     },
     {
         id: '00000000-0000-0000-0000-030000000001',
         film: filme[2],
-        genre: 'JAVASCRIPT',
+        genre: 'HORROR',
     },
     {
         id: '00000000-0000-0000-0000-030000000002',
         film: filme[2],
-        genre: 'TYPESCRIPT',
+        genre: 'FANTASY',
     },
     {
         id: '00000000-0000-0000-0000-500000000001',
         film: filme[4],
-        genre: 'TYPESCRIPT',
+        genre: 'FANTASY',
     },
     {
         id: '00000000-0000-0000-0000-600000000001',
         film: filme[5],
-        genre: 'TYPESCRIPT',
+        genre: 'FANTASY',
     },
 ];
 
