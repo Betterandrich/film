@@ -58,7 +58,7 @@ describe('GraphQL Mutations', () => {
                             rabatt: 0.099,
                             hochaufloesend: true,
                             datum: "2022-02-28",
-                            isan: "3897225832",
+                            isan: "0002-0001-16FF-0008-Y",
                             homepage: "http://test.de/",
                             genres: ["JAVASCRIPT"]
                         }
@@ -105,8 +105,8 @@ describe('GraphQL Mutations', () => {
                             rabatt: 0.011,
                             hochaufloesend: true,
                             datum: "2021-01-31",
-                            isan: "9783663087465",
-                            homepage: "http://acme.com",
+                            isan: "0000-0000-12DF-0200-X-0031-0006-3",
+                            homepage: "http://test.de/",
                             genres: ["JAVASCRIPT"]
                         }
                     )
@@ -159,7 +159,7 @@ describe('GraphQL Mutations', () => {
                             rabatt: 0.099,
                             hochaufloesend: false,
                             datum: "2021-01-02",
-                            isan: "9780201633610",
+                            isan: "0006-0550-10AE-0907-U-1051-0020-1",
                             homepage: "https://acme.com"
                         }
                     )
@@ -288,7 +288,7 @@ describe('GraphQL Mutations', () => {
                             rabatt: 0.099,
                             hochaufloesend: false,
                             datum: "2021-01-02",
-                            isan: "9780201633610",
+                            isan: "0006-0550-10AE-0907-U-1051-0020-1",
                             homepage: "https://acme.com",
                         }
                     )

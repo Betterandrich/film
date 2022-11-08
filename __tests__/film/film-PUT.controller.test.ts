@@ -24,7 +24,7 @@ const geaendertesFilm: FilmUpdateDTO = {
     rabatt: 0.044,
     hochaufloesend: true,
     datum: '2022-02-03',
-    isan: '0007097328',
+    isan: '3232-4001-0000-0123-Z-1050-8010-D',
     homepage: 'https://test.te',
 };
 const idVorhanden = '00000000-0000-0000-0000-000000000040';
@@ -38,7 +38,7 @@ const geaendertesFilmIdNichtVorhanden: FilmUpdateDTO = {
     rabatt: 0.044,
     hochaufloesend: true,
     datum: '2022-02-04',
-    isan: '0007097328',
+    isan: '3232-4001-0000-0123-Z-1050-8010-D',
     homepage: 'https://test.te',
 };
 const idNichtVorhanden = '99999999-9999-9999-9999-999999999999';
@@ -64,7 +64,7 @@ const veraltesFilm: FilmUpdateDTO = {
     rabatt: 0.044,
     hochaufloesend: true,
     datum: '2022-02-03',
-    isan: '0007097328',
+    isan: '3232-4001-0000-0123-Z-1050-8010-D',
     homepage: 'https://test.te',
 };
 

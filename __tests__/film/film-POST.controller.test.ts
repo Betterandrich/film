@@ -25,7 +25,7 @@ const neuesFilm: FilmDTO = {
     rabatt: 0.099,
     hochaufloesend: true,
     datum: '2022-02-28',
-    isan: '9780007006441',
+    isan: '1234-4201-0000-0123-R-1020-9010-C',
     homepage: 'https://test.de/',
     genres: ['JAVASCRIPT', 'TYPESCRIPT'],
 };
@@ -50,7 +50,7 @@ const neuesFilmTitelExistiert: FilmDTO = {
     rabatt: 0.099,
     hochaufloesend: true,
     datum: '2022-02-28',
-    isan: '9780007097326',
+    isan: '1234-4201-0000-0123-R-1020-9010-C',
     homepage: 'https://test.de/',
     genres: ['JAVASCRIPT', 'TYPESCRIPT'],
 };

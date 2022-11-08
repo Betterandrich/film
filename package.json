@@ -29,7 +29,7 @@
     "clinic": "clinic doctor -- node dist/src/main.js",
     "clean": "rimraf dist log/server*.log",
     "depcheck": "depcheck",
-    "eslint": "eslint --ext .ts ./src",
+    "eslint": "eslint --ext .ts ./src ./__tests__",
     "copy-resources": "node scripts/copy-resources",
     "leasot": "leasot --exit-nicely src/**/*.ts",
     "invoke-webrequest": "pwsh -Command Invoke-WebRequest https://localhost:3000/00000000-0000-0000-0000-000000000001 -SslProtocol Tls13 -SkipCertificateCheck",
