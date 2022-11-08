@@ -15,9 +15,6 @@ import each from 'jest-each';
 // T e s t d a t e n
 // -----------------------------------------------------------------------------
 const titelVorhanden = ['a', 't', 'g'];
-const titelNichtVorhanden = ['xx', 'yy'];
-const genresVorhanden = ['javascript', 'typescript'];
-const genresNichtVorhanden = ['csharp', 'php'];
 
 // -----------------------------------------------------------------------------
 // T e s t s

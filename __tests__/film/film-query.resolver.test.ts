@@ -23,10 +23,6 @@ const idVorhanden = [
 
 const titelVorhanden = ['Alpha', 'Beta', 'Gamma'];
 
-const teilTitelVorhanden = ['a', 't', 'g'];
-
-const teilTitelNichtVorhanden = ['Xyz', 'abc'];
-
 // -----------------------------------------------------------------------------
 // T e s t s
 // -----------------------------------------------------------------------------
