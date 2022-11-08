@@ -418,7 +418,7 @@ rules:
   keyword-spacing: error
   # wegen //NOSONAR
   #line-comment-position: error
-  linebreak-style: error
+  linebreak-style: error 
   logical-assignment-operators: error
   max-classes-per-file: error
   max-depth: error
