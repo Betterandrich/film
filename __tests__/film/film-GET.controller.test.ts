@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { afterAll, beforeAll, describe, test } from '@jest/globals';
 import axios, { type AxiosInstance, type AxiosResponse } from 'axios';
 import {
@@ -68,10 +69,9 @@ describe('GET /', () => {
             const params = { titel: teilTitel };
 
             // when
-            const response: AxiosResponse<FilmeModel> = await client.get(
-                '/',
-                { params },
-            );
+            const response: AxiosResponse<FilmeModel> = await client.get('/', {
+                params,
+            });
 
             // then
             const { status, headers, data } = response;

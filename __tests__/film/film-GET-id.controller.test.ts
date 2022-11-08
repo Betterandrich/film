@@ -27,7 +27,6 @@ const idNichtVorhanden = [
 // -----------------------------------------------------------------------------
 // T e s t s
 // -----------------------------------------------------------------------------
-// eslint-disable-next-line max-lines-per-function
 describe('GET /:id', () => {
     let client: AxiosInstance;
 

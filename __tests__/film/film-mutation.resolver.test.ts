@@ -1,3 +1,6 @@
+/* eslint-disable eslint-comments/disable-enable-pair */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable max-lines */
 import { type GraphQLRequest, type GraphQLResponse } from 'apollo-server-types';
 import { afterAll, beforeAll, describe, test } from '@jest/globals';
 import axios, { type AxiosInstance, type AxiosResponse } from 'axios';
@@ -321,7 +324,7 @@ describe('GraphQL Mutations', () => {
             `Es gibt kein Film mit der ID ${id.toLowerCase()}`,
         );
         expect(path).toBeDefined();
-        expect(path!![0]).toBe('update');
+        expect(path![0]).toBe('update');
         expect(extensions).toBeDefined();
         expect(extensions!.code).toBe('BAD_USER_INPUT');
     });
@@ -353,10 +356,10 @@ describe('GraphQL Mutations', () => {
         expect(headers['content-type']).toMatch(/json/iu);
         expect(data.errors).toBeUndefined();
 
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const deleteMutation = data.data!.delete;
 
         // Der Wert der Mutation ist true (falls geloescht wurde) oder false
         expect(deleteMutation).toBe(true);
     });
 });
-/* eslint-enable max-lines, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-extra-non-null-assertion */
