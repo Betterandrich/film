@@ -1,3 +1,7 @@
+/* eslint-disable eslint-comments/disable-enable-pair */
+/* eslint-disable @typescript-eslint/no-extra-non-null-assertion */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { type GraphQLRequest, type GraphQLResponse } from 'apollo-server-types';
 import { afterAll, beforeAll, describe, test } from '@jest/globals';
 import axios, { type AxiosInstance, type AxiosResponse } from 'axios';
@@ -125,4 +129,3 @@ describe('Login', () => {
         expect(extensions!.code).toBe('BAD_USER_INPUT');
     });
 });
-/* eslint-enable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-non-null-assertion, , @typescript-eslint/no-extra-non-null-assertion */
