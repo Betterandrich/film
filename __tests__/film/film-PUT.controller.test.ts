@@ -211,44 +211,4 @@ describe('PUT /:id', () => {
         expect(status).toBe(HttpStatus.PRECONDITION_FAILED);
         expect(data).toEqual(expect.stringContaining('Die Versionsnummer'));
     });
-
-    test('Vorhandenes Film aendern, aber ohne Token', async () => {
-        // given
-        const url = `/${idVorhanden}`;
-        delete headers.Authorization;
-        headers['If-Match'] = '"0"';
-
-        // when
-        const response: AxiosResponse<Record<string, any>> = await client.put(
-            url,
-            geaendertesFilm,
-            { headers },
-        );
-
-        // then
-        const { status, data } = response;
-
-        expect(status).toBe(HttpStatus.FORBIDDEN);
-        expect(data.statusCode).toBe(HttpStatus.FORBIDDEN);
-    });
-
-    test('Vorhandenes Film aendern, aber mit falschem Token', async () => {
-        // given
-        const url = `/${idVorhanden}`;
-        const token = 'FALSCH';
-        headers.Authorization = `Bearer ${token}`;
-
-        // when
-        const response: AxiosResponse<Record<string, any>> = await client.put(
-            url,
-            geaendertesFilm,
-            { headers },
-        );
-
-        // then
-        const { status, data } = response;
-
-        expect(status).toBe(HttpStatus.FORBIDDEN);
-        expect(data.statusCode).toBe(HttpStatus.FORBIDDEN);
-    });
 });

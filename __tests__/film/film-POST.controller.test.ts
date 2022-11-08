@@ -162,37 +162,4 @@ describe('POST /', () => {
         expect(status).toBe(HttpStatus.UNPROCESSABLE_ENTITY);
         expect(data).toEqual(expect.stringContaining('Titel'));
     });
-
-    test('Neues Film, aber ohne Token', async () => {
-        // when
-        const response: AxiosResponse<Record<string, any>> = await client.post(
-            '/',
-            neuesFilm,
-        );
-
-        // then
-        const { status, data } = response;
-
-        expect(status).toBe(HttpStatus.FORBIDDEN);
-        expect(data.statusCode).toBe(HttpStatus.FORBIDDEN);
-    });
-
-    test('Neues Film, aber mit falschem Token', async () => {
-        // given
-        const token = 'FALSCH';
-        headers.Authorization = `Bearer ${token}`;
-
-        // when
-        const response: AxiosResponse<Record<string, any>> = await client.post(
-            '/',
-            neuesFilm,
-            { headers },
-        );
-
-        // then
-        const { status, data } = response;
-
-        expect(status).toBe(HttpStatus.FORBIDDEN);
-        expect(data.statusCode).toBe(HttpStatus.FORBIDDEN);
-    });
 });

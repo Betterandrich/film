@@ -54,36 +54,4 @@ describe('DELETE /filme', () => {
         expect(status).toBe(HttpStatus.NO_CONTENT);
         expect(data).toBeDefined();
     });
-
-    test('Film loeschen, aber ohne Token', async () => {
-        // given
-        const url = `/${id}`;
-
-        // when
-        const response: AxiosResponse<Record<string, any>> =
-            await client.delete(url);
-
-        // then
-        const { status, data } = response;
-
-        expect(status).toBe(HttpStatus.FORBIDDEN);
-        expect(data.statusCode).toBe(HttpStatus.FORBIDDEN);
-    });
-
-    test('Film loeschen, aber mit falschem Token', async () => {
-        // given
-        const url = `/${id}`;
-        const token = 'FALSCH';
-        const headers = { Authorization: `Bearer ${token}` }; // eslint-disable-line @typescript-eslint/naming-convention
-
-        // when
-        const response: AxiosResponse<Record<string, any>> =
-            await client.delete(url, { headers });
-
-        // then
-        const { status, data } = response;
-
-        expect(status).toBe(HttpStatus.FORBIDDEN);
-        expect(data.statusCode).toBe(HttpStatus.FORBIDDEN);
-    });
 });

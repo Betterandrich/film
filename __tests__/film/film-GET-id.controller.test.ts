@@ -86,23 +86,4 @@ describe('GET /:id', () => {
             expect(data).toMatch(/^not found$/iu);
         },
     );
-
-    each(idVorhandenETag).test(
-        'Film zu vorhandener ID %s mit ETag %s',
-        async (id: string, etag: string) => {
-            // given
-            const url = `/${id}`;
-
-            // when
-            const response: AxiosResponse<string> = await client.get(url, {
-                headers: { 'If-None-Match': etag }, // eslint-disable-line @typescript-eslint/naming-convention
-            });
-
-            // then
-            const { status, data } = response;
-
-            expect(status).toBe(HttpStatus.NOT_MODIFIED);
-            expect(data).toBe('');
-        },
-    );
 });
