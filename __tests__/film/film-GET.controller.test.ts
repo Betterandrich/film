@@ -39,29 +39,6 @@ describe('GET /', () => {
         await shutdownServer();
     });
 
-    test('Alle Filme', async () => {
-        // given
-
-        // when
-        const response: AxiosResponse<FilmeModel> = await client.get('/');
-
-        // then
-        const { status, headers, data } = response;
-
-        expect(status).toBe(HttpStatus.OK);
-        expect(headers['content-type']).toMatch(/json/iu);
-        expect(data).toBeDefined();
-
-        const { filme } = data._embedded;
-
-        filme
-            .map((film) => film._links.self.href)
-            .forEach((selfLink) => {
-                // eslint-disable-next-line security/detect-non-literal-regexp, security-node/non-literal-reg-expr
-                expect(selfLink).toMatch(new RegExp(`^${baseURL}`, 'u'));
-            });
-    });
-
     each(titelVorhanden).test(
         'Filme mit einem Titel, der "%s" enthaelt',
         async (teilTitel: string) => {

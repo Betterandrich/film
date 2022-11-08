@@ -63,7 +63,7 @@ describe('GraphQL Mutations', () => {
                             datum: "2022-02-28",
                             isan: "0002-0001-16FF-0008-Y",
                             homepage: "http://test.de/",
-                            genres: ["JAVASCRIPT"]
+                            genres: ["HORROR"]
                         }
                     )
                 }
@@ -110,7 +110,7 @@ describe('GraphQL Mutations', () => {
                             datum: "2021-01-31",
                             isan: "0000-0000-12DF-0200-X-0031-0006-3",
                             homepage: "http://test.de/",
-                            genres: ["JAVASCRIPT"]
+                            genres: ["HORROR"]
                         }
                     )
                 }

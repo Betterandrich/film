@@ -27,7 +27,7 @@ const neuesFilm: FilmDTO = {
     datum: '2022-02-28',
     isan: '1234-4201-0000-0123-R-1020-9010-C',
     homepage: 'https://test.de/',
-    genres: ['JAVASCRIPT', 'TYPESCRIPT'],
+    genres: ['HORROR', 'FANTASY'],
 };
 const neuesFilmInvalid: Record<string, unknown> = {
     titel: '!?$',
@@ -52,7 +52,7 @@ const neuesFilmTitelExistiert: FilmDTO = {
     datum: '2022-02-28',
     isan: '1234-4201-0000-0123-R-1020-9010-C',
     homepage: 'https://test.de/',
-    genres: ['JAVASCRIPT', 'TYPESCRIPT'],
+    genres: ['HORROR', 'FANTASY'],
 };
 
 // -----------------------------------------------------------------------------
