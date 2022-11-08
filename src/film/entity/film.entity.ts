@@ -82,7 +82,7 @@ export class Film {
         eager: true,
         cascade: ['insert'],
     })
-    @ApiProperty({ example: ['JAVASCRIPT', 'TYPESCRIPT'] })
+    @ApiProperty({ example: ['HORROR', 'FANTASY'] })
     readonly genres!: Genre[];
 
     @CreateDateColumn({ type: 'timestamp' })

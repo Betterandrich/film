@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS film (
 CREATE TABLE IF NOT EXISTS genre (
     id         char(36) PRIMARY KEY USING INDEX TABLESPACE filmspace,
     film_id    char(36) NOT NULL REFERENCES film,
-    genre varchar(16) NOT NULL CHECK (genre ~ 'JAVASCRIPT|TYPESCRIPT')
+    genre varchar(16) NOT NULL CHECK (genre ~ 'HORROR|FANTASY')
 ) TABLESPACE filmspace;
 
 -- default: btree
