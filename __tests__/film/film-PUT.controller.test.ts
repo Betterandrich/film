@@ -159,7 +159,7 @@ describe('PUT /:id', () => {
         expect(status).toBe(HttpStatus.UNPROCESSABLE_ENTITY);
         expect(data).toEqual(
             expect.arrayContaining([
-                'Ein Filmtitel muss mit einem Filmstaben, einer Ziffer oder _ beginnen.',
+                'Ein Filmtitel muss mit einem Buchstaben, einer Ziffer oder _ beginnen.',
                 `Eine Bewertung muss zwischen 0 und ${MAX_RATING} liegen.`,
                 'Die Angebotsoption eines Filmes muss LEIHEN oder KAUFEN sein.',
                 'Der Produzent eines Filmes muss FOO_PRODUZENT oder BAR_PRODUZENT sein.',
