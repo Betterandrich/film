@@ -58,12 +58,12 @@ export class QueryBuilder {
         );
 
         // type-coverage:ignore-next-line
-        const { titel, isan, javascript, typescript, ...props } = suchkriterien;
+        const { titel, isan, horror, fantasy, ...props } = suchkriterien;
 
         queryBuilder = this.#buildGenres(
             queryBuilder,
-            javascript, // eslint-disable-line @typescript-eslint/no-unsafe-argument
-            typescript, // eslint-disable-line @typescript-eslint/no-unsafe-argument
+            horror, // eslint-disable-line @typescript-eslint/no-unsafe-argument
+            fantasy, // eslint-disable-line @typescript-eslint/no-unsafe-argument
         );
 
         let useWhere = true;

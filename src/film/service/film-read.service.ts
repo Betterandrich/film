@@ -21,8 +21,8 @@ export interface Suchkriterien {
     readonly datum?: string;
     readonly isan?: string;
     readonly homepage?: string;
-    readonly javascript?: boolean;
-    readonly typescript?: boolean;
+    readonly horror?: boolean;
+    readonly fantasy?: boolean;
 }
 
 /**
@@ -116,8 +116,8 @@ export class FilmReadService {
         keys.forEach((key) => {
             if (
                 !this.#filmProps.includes(key) &&
-                key !== 'javascript' &&
-                key !== 'typescript'
+                key !== 'horror' &&
+                key !== 'fantasy'
             ) {
                 this.#logger.debug(
                     '#find: ungueltiges Suchkriterium "%s"',
