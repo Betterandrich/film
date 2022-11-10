@@ -16,7 +16,7 @@
 CREATE TABLE IF NOT EXISTS genre (
     id         CHAR(36) NOT NULL PRIMARY KEY,
     film_id    CHAR(36) NOT NULL REFERENCES film,
-    genre VARCHAR(16) NOT NULL CHECK (genre = 'JAVASCRIPT' OR genre = 'TYPESCRIPT'),
+    genre VARCHAR(16) NOT NULL CHECK (genre = 'HORROR' OR genre = 'FANTASY'),
 
     INDEX genre_film_idx(film_id)
 ) TABLESPACE filmspace ROW_FORMAT=COMPACT;
