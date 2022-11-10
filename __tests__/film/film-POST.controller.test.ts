@@ -82,7 +82,7 @@ describe('POST /', () => {
         await shutdownServer();
     });
 
-    test('Neues Film', async () => {
+    test('Neuer Film', async () => {
         // given
         const token = await loginRest(client);
         headers.Authorization = `Bearer ${token}`;
@@ -115,7 +115,7 @@ describe('POST /', () => {
         expect(data).toBe('');
     });
 
-    test('Neues Film mit ungueltigen Daten', async () => {
+    test('Neuer Film mit ungueltigen Daten', async () => {
         // given
         const token = await loginRest(client);
         headers.Authorization = `Bearer ${token}`;
@@ -144,7 +144,7 @@ describe('POST /', () => {
         );
     });
 
-    test('Neues Film, aber der Titel existiert bereits', async () => {
+    test('Neuer Film, aber der Titel existiert bereits', async () => {
         // given
         const token = await loginRest(client);
         headers.Authorization = `Bearer ${token}`;

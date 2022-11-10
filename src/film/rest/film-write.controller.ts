@@ -79,7 +79,7 @@ export class FilmWriteController {
      */
     @Post()
     @Roles('admin', 'mitarbeiter')
-    @ApiOperation({ summary: 'Ein neues Film anlegen' })
+    @ApiOperation({ summary: 'Ein neuer Film anlegen' })
     @ApiCreatedResponse({ description: 'Erfolgreich neu angelegt' })
     @ApiBadRequestResponse({ description: 'Fehlerhafte Filmdaten' })
     async create(
